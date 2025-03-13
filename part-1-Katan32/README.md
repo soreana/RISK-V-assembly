@@ -2,9 +2,7 @@
 
 ## Overview
 
-This project contains a **RISC-V assembly implementation of a single round of the KATAN32 block cipher**, following the official specification and using correct bit splitting between L1 and L2. The implementation is designed to run on a RISC-V environment using **SEGGER Embedded Studio (SES)** or any RISC-V simulator supporting RV32I.
-
-The goal of this project is to demonstrate low-level cryptographic computations and bit-level manipulations using pure assembly instructions, optimized for embedded systems or constrained devices.
+This project contains a **RISC-V assembly implementation of a single round of the KATAN32 block cipher**, following the official specification and using correct bit splitting between L1 and L2. The implementation is designed to run on a RISC-V environment using **SEGGER Embedded Studio (SES)**.
 
 ---
 
