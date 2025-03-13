@@ -91,7 +91,7 @@ L2 after 1 round: 0xYYYYY # Final 19-bit L2
 
 ### Build and Run:
 
-1. Set t0 to the desired value.
+1. Set `t0` to the desired value.
 2. Open the project in SEGGER Embedded Studio.
 3. Add `main.c` and `assembly.asm` to your project.
 4. Build and run the project on RISC-V target.
