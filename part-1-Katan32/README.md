@@ -91,10 +91,11 @@ L2 after 1 round: 0xYYYYY # Final 19-bit L2
 
 ### Build and Run:
 
-1. Open the project in SEGGER Embedded Studio.
-2. Add `main.c` and `assembly.asm` to your project.
-3. Build and run the project on RISC-V target.
-4. Observe the output in console (J-Link RTT, UART, or terminal depending on setup).
+1. Set t0 to the desired value.
+2. Open the project in SEGGER Embedded Studio.
+3. Add `main.c` and `assembly.asm` to your project.
+4. Build and run the project on RISC-V target.
+5. Observe the output in console (J-Link RTT, UART, or terminal depending on setup).
 
 ---
 
