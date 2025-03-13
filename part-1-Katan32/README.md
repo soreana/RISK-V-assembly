@@ -31,7 +31,7 @@ This project contains a **RISC-V assembly implementation of a single round of th
 ## How It Works
 
 1. **State Initialization**:\
-   The 32-bit state `0x12345678` is split as:
+   The 32-bit state (which is stored in `t0` register with value of `0x12345678`) is split as:
 
    - `L1 = state[31:19]` (upper 13 bits)
    - `L2 = state[18:0]` (lower 19 bits)
