@@ -1,0 +1,177 @@
+        108000EF    jal 0x0000025C <printf>
+--- main.c -- 13 -------------------------------------------
+my_assembly_function();
+
+printf("L1 after 1 round: 0x%04x\n", result_L1);
+printf("L2 after 1 round: 0x%05x\n", result_L2);
+        8041A583    lw a1, -2044(gp)
+        00000537    lui a0, 0x00000
+        2B650513    addi a0, a0, 694
+        0F8000EF    jal 0x0000025C <printf>
+--- main.c -- 18 -------------------------------------------
+return 0;
+        00000513    mv a0, zero
+        00C12083    lw ra, 12(sp)
+        01010113    addi sp, sp, 16
+        00008067    ret
+<trap_entry>
+        FC010113    addi sp, sp, -64
+        00112023    sw ra, 0(sp)
+        00512223    sw t0, 4(sp)
+        00612423    sw t1, 8(sp)
+        00712623    sw t2, 12(sp)
+        00A12823    sw a0, 16(sp)
+        00B12A23    sw a1, 20(sp)
+        00C12C23    sw a2, 24(sp)
+        00D12E23    sw a3, 28(sp)
+        02E12023    sw a4, 32(sp)
+        02F12223    sw a5, 36(sp)
+        03012423    sw a6, 40(sp)
+        03112623    sw a7, 44(sp)
+        03C12823    sw t3, 48(sp)
+        03D12A23    sw t4, 52(sp)
+        03E12C23    sw t5, 56(sp)
+        03F12E23    sw t6, 60(sp)
+        34202573    csrr a0, mcause
+        341025F3    csrr a1, mepc
+        00000337    lui t1, 0x00000
+        21C30313    addi t1, t1, 540
+        000300E7    jalr t1
+        34151073    csrw mepc, a0
+        00012083    lw ra, 0(sp)
+        00412283    lw t0, 4(sp)
+        00812303    lw t1, 8(sp)
+        00C12383    lw t2, 12(sp)
+        01012503    lw a0, 16(sp)
+        01412583    lw a1, 20(sp)
+        01812603    lw a2, 24(sp)
+        01C12683    lw a3, 28(sp)
+        02012703    lw a4, 32(sp)
+        02412783    lw a5, 36(sp)
+        02812803    lw a6, 40(sp)
+        02C12883    lw a7, 44(sp)
+        03012E03    lw t3, 48(sp)
+        03412E83    lw t4, 52(sp)
+        03812F03    lw t5, 56(sp)
+        03C12F83    lw t6, 60(sp)
+        04010113    addi sp, sp, 64
+        30200073    mret
+<handle_trap>
+        0000006F    j 0x0000021C <handle_trap>
+<_init>
+        00008067    ret
+<SEGGER_SEMIHOST_Writef>
+        FE010113    addi sp, sp, -32
+        00050713    mv a4, a0
+        00058793    mv a5, a1
+        04000513    li a0, 64
+        00810593    addi a1, sp, 8
+        00112E23    sw ra, 28(sp)
+        00E12423    sw a4, 8(sp)
+        00F12623    sw a5, 12(sp)
+        014000EF    jal 0x00000258 <SEGGER_SEMIHOST_X_Request>
+        01C12083    lw ra, 28(sp)
+        02010113    addi sp, sp, 32
+        00008067    ret
+<SEGGER_SEMIHOST_DebugHalt>
+        00008067    ret
+<SEGGER_SEMIHOST_X_Request>
+        FFDFF06F    j 0x00000254 <SEGGER_SEMIHOST_DebugHalt>
+<printf>
+        FC010113    addi sp, sp, -64
+        02B12223    sw a1, 36(sp)
+        02F12A23    sw a5, 52(sp)
+        00C10593    addi a1, sp, 12
+        02410793    addi a5, sp, 36
+        00112E23    sw ra, 28(sp)
+        02C12423    sw a2, 40(sp)
+        02D12623    sw a3, 44(sp)
+        02E12823    sw a4, 48(sp)
+        03012C23    sw a6, 56(sp)
+        03112E23    sw a7, 60(sp)
+        00F12623    sw a5, 12(sp)
+        F99FF0EF    jal 0x00000224 <SEGGER_SEMIHOST_Writef>
+        01C12083    lw ra, 28(sp)
+        04010113    addi sp, sp, 64
+        00008067    ret
+        314C        fld fa1, 160(a0)
+        6120        flw fs0, 64(a0)
+        7466        flw fs0, 120(sp)
+        7265        lui tp, 0xFFFF9
+        3120        fld fs0, 96(a0)
+        7220        flw fs0, 96(a2)
+        646E756F    jal a0, 0x000E78EE
+        203A        fld ft0, 392(sp)
+        7830        flw fa2, 112(s0)
+        3025        jal 0xFFFFFAD8
+        7834        flw fa3, 112(s0)
+        000A        slli zero, zero, 2
+        324C        fld fa1, 160(a2)
+        6120        flw fs0, 64(a0)
+        7466        flw fs0, 120(sp)
+        7265        lui tp, 0xFFFF9
+        3120        fld fs0, 96(a0)
+        7220        flw fs0, 96(a2)
+        646E756F    jal a0, 0x000E7908
+        203A        fld ft0, 392(sp)
+        7830        flw fa2, 112(s0)
+        3025        jal 0xFFFFFAF2
+        7835        lui a6, 0xFFFED
+        000A        slli zero, zero, 2
+<__SEGGER_init_copy>
+        00042503    lw a0, 0(s0)
+        00442583    lw a1, 4(s0)
+        00842603    lw a2, 8(s0)
+        00C40413    addi s0, s0, 12
+        00060E63    beqz a2, 0x000002FC
+        00058683    lb a3, 0(a1)
+        00D50023    sb a3, 0(a0)
+        00150513    addi a0, a0, 1
+        00158593    addi a1, a1, 1
+        FFF60613    addi a2, a2, -1
+        FE0616E3    bnez a2, 0x000002E4
+        00008067    ret
+<__SEGGER_init_table__>
+        02D0        addi a2, sp, 324
+        0000        ??????
+        0000        ??????
+        2000        fld fs0, 0(s0)
+        0314        addi a3, sp, 384
+        0000        ??????
+        0008        ??????
+        0000        ??????
+        0044        addi s1, sp, 4
+        0000        ??????
+<__SEGGER_init_data__>
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????
+        0000        ??????

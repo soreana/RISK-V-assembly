@@ -1,0 +1,312 @@
+***********************************************************************************************
+***                                                                                         ***
+***                                    LINK INFORMATION                                     ***
+***                                                                                         ***
+***********************************************************************************************
+
+Linker version:
+
+  SEGGER RISC-V Linker 4.38.6 compiled Nov 27 2023 15:23:44
+  Copyright (c) 2017-2022 SEGGER Microcontroller GmbH    www.segger.com
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                     MODULE SUMMARY                                      ***
+***                                                                                         ***
+***********************************************************************************************
+
+Memory use by input file:
+
+  Object File                                       RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  assembly.o                                            240                      24            
+  main.o                                                 72          52                        
+  prinops_semihostformatted_rv32i_balanced.a             64                                    
+  SEGGER_RV32_crt0.o                                     80                                    
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (4 objects)                                  456          52          24            
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  prinops_semihost_rv32i_balanced.a                      56                                    
+  SEGGER_RV32_crtinit_rv32i_balanced.a                  220                                    
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (2 archives)                                 276                                    
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Linker created (shared data, fills, blocks):                       44                   1 024
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                                732          96          24       1 024
+  =============================================  ==========  ==========  ==========  ==========
+
+Memory use by archive member:
+
+  Archive member                                    RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+                                                        220                                    
+  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+                                                         52                                    
+  SEGGER_SEMIHOST_Generic.o (prinops_semihost_rv32i_balanced.a)
+                                                          4                                    
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (3 members from 2 archives)                  276                                    
+  Objects (4 files)                                     456          52          24            
+  Linker created (shared data, fills, blocks):                       44                   1 024
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                                732          96          24       1 024
+  =============================================  ==========  ==========  ==========  ==========
+
+Memory use by linker:
+
+  Description                                       RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Initialization table                                               44                        
+  Memory for block 'stack'                                                                1 024
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (linker created):                                         44                   1 024
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Objects (4 files)                                     456          52          24            
+  Archives (2 files)                                    276                                    
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                                732          96          24       1 024
+  =============================================  ==========  ==========  ==========  ==========
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                     SECTION DETAIL                                      ***
+***                                                                                         ***
+***********************************************************************************************
+
+Sections by address:
+
+  Range              Symbol or [section] Name         Size  Al  Init  Ac  Object File
+  -----------------  -------------------------  ----------  --  ----  --  -----------
+  00000000-0000004f  _start                             80   4  Code  RX  SEGGER_RV32_crt0.o
+  00000050-0000013f  my_assembly_function              240   4  Code  RX  assembly.o
+  00000140-00000187  main                               72   4  Code  RX  main.o
+  00000188-0000022b  trap_entry                        164   4  Code  RX  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  0000022c-0000022f  handle_trap                         4   4  Code  RX  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  00000230-00000233  _init                               4   4  Code  RX  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  00000234-00000263  SEGGER_SEMIHOST_Writef             48   4  Code  RX  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+  00000264-00000267  SEGGER_SEMIHOST_DebugHalt           4   4  Code  RX  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+  00000268-0000026b  SEGGER_SEMIHOST_X_Request           4   4  Code  RX  SEGGER_SEMIHOST_Generic.o (prinops_semihost_rv32i_balanced.a)
+  0000026c-000002ab  printf                             64   4  Code  RX  prinops_semihostformatted_rv32i_balanced.a
+  000002ac-000002c5  [.rodata..L.str]                   26   1  Cnst  RO  main.o
+  000002c6-000002df  [.rodata..L.str.1]                 26   1  Cnst  RO  main.o
+  000002e0-0000030f  __SEGGER_init_copy                 48   4  Code  RX  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  00000310-00000323  __SEGGER_init_table__              20   4  Cnst  RO  [ Linker created ]
+  00000324-0000033b  __SEGGER_init_data__               24   4  Cnst  RO  [ Linker created ]
+  0000033c-1fffffff  ( UNUSED .=.+536870084 )   536 870 084
+                                                             -  ----  -   -
+  20000000-20000017  result_L1                          24   1  Init  RW  assembly.o
+  20000018-2000fbff  ( UNUSED .=.+64488 )           64 488   -  ----  -   -
+  2000fc00-2000ffff  [.bss.block.stack]              1 024   8  None  ZI  [ Linker created ]
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                       SYMBOL LIST                                       ***
+***                                                                                         ***
+***********************************************************************************************
+
+Function symbols by name:
+
+  Symbol name                   Address        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  SEGGER_SEMIHOST_DebugHalt  0x00000264           4      4  Code  Gb  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+  SEGGER_SEMIHOST_Writef     0x00000234          52      4  Code  Gb  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+  SEGGER_SEMIHOST_X_Request  0x00000268           8      4  Code  Gb  SEGGER_SEMIHOST_Generic.o (prinops_semihost_rv32i_balanced.a)
+  __SEGGER_init_copy         0x000002E0          48      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  __SEGGER_init_done         0x00000044                  4  Code  Gb  SEGGER_RV32_crt0.o
+  __startup_complete         0x00000044                  4  Code  Gb  SEGGER_RV32_crt0.o
+  _init                      0x00000230         [4]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  _start                     0x00000000          88      4  Code  Gb  SEGGER_RV32_crt0.o
+  exit                       0x0000004C           4      4  Code  Gb  SEGGER_RV32_crt0.o
+  handle_trap                0x0000022C         [4]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  main                       0x00000140          92      4  Code  Gb  main.o
+  printf                     0x0000026C          68      4  Code  Gb  prinops_semihostformatted_rv32i_balanced.a
+  trap_entry                 0x00000188       [164]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+
+Function symbols by address:
+
+     Address  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x00000000  _start                             88      4  Code  Gb  SEGGER_RV32_crt0.o
+  0x00000044  __startup_complete                         4  Code  Gb  SEGGER_RV32_crt0.o
+  0x00000044  __SEGGER_init_done                         4  Code  Gb  SEGGER_RV32_crt0.o
+  0x0000004C  exit                                4      4  Code  Gb  SEGGER_RV32_crt0.o
+  0x00000140  main                               92      4  Code  Gb  main.o
+  0x00000188  trap_entry                      [164]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  0x0000022C  handle_trap                       [4]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  0x00000230  _init                             [4]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  0x00000234  SEGGER_SEMIHOST_Writef             52      4  Code  Gb  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+  0x00000264  SEGGER_SEMIHOST_DebugHalt           4      4  Code  Gb  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+  0x00000268  SEGGER_SEMIHOST_X_Request           8      4  Code  Gb  SEGGER_SEMIHOST_Generic.o (prinops_semihost_rv32i_balanced.a)
+  0x0000026C  printf                             68      4  Code  Gb  prinops_semihostformatted_rv32i_balanced.a
+  0x000002E0  __SEGGER_init_copy                 48      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+
+Function symbols by descending size:
+
+  Symbol name                      Size  Align  Type  Bd  Object File
+  -------------------------  ----------  -----  ----  --  -----------
+  main                               92      4  Code  Gb  main.o
+  _start                             88      4  Code  Gb  SEGGER_RV32_crt0.o
+  printf                             68      4  Code  Gb  prinops_semihostformatted_rv32i_balanced.a
+  SEGGER_SEMIHOST_Writef             52      4  Code  Gb  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+  __SEGGER_init_copy                 48      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  SEGGER_SEMIHOST_X_Request           8      4  Code  Gb  SEGGER_SEMIHOST_Generic.o (prinops_semihost_rv32i_balanced.a)
+  SEGGER_SEMIHOST_DebugHalt           4      4  Code  Gb  SEGGER_SEMIHOST.o (prinops_semihost_rv32i_balanced.a)
+  exit                                4      4  Code  Gb  SEGGER_RV32_crt0.o
+  __SEGGER_init_done                         4  Code  Gb  SEGGER_RV32_crt0.o
+  __startup_complete                         4  Code  Gb  SEGGER_RV32_crt0.o
+  _init                             [4]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  handle_trap                       [4]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+  trap_entry                      [164]      4  Code  Wk  SEGGER_RV32_crtinit.o (SEGGER_RV32_crtinit_rv32i_balanced.a)
+
+Read-only data symbols by name:
+
+  Global base (gp) at 0x20000800
+  Thread base (tp) at 0x00000AE4
+  
+  Symbol name                   Address     Access        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ---------  ----------  -----  ----  --  -----------
+  __SEGGER_init_data__       0x00000324  tp-0x07C0        [24]      4  Cnst  Lc  [ Linker created ]
+  __SEGGER_init_table__      0x00000310  tp-0x07D4        [20]      4  Cnst  Lc  [ Linker created ]
+
+Read-only data symbols by address:
+
+  Global base (gp) at 0x20000800
+  Thread base (tp) at 0x00000AE4
+  
+     Address     Access  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  ---------  -------------------------  ----------  -----  ----  --  -----------
+  0x00000310  tp-0x07D4  __SEGGER_init_table__            [20]      4  Cnst  Lc  [ Linker created ]
+  0x00000324  tp-0x07C0  __SEGGER_init_data__             [24]      4  Cnst  Lc  [ Linker created ]
+
+Untyped symbols by name:
+
+  Global base (gp) at 0x20000800
+  Thread base (tp) at 0x00000AE4
+  
+  Symbol name                     Value     Access        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ---------  ----------  -----  ----  --  -----------
+  __FLASH1_segment_end__     0x00100000                                ----  Gb  [ Linker created ]
+  __FLASH1_segment_size__    0x00100000                                ----  Gb  [ Linker created ]
+  __FLASH1_segment_start__   0x00000000                                ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_end__
+                             0x0000033C  tp-0x07A8                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_size__
+                             0x0000033C  tp-0x07A8                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_start__
+                             0x00000000                                ----  Gb  [ Linker created ]
+  __FLASH_segment_end__      0x00100000                                ----  Gb  [ Linker created ]
+  __FLASH_segment_size__     0x00100000                                ----  Gb  [ Linker created ]
+  __FLASH_segment_start__    0x00000000                                ----  Gb  [ Linker created ]
+  __FLASH_segment_used_end__
+                             0x0000033C  tp-0x07A8                     ----  Gb  [ Linker created ]
+  __FLASH_segment_used_size__
+                             0x0000033C  tp-0x07A8                     ----  Gb  [ Linker created ]
+  __FLASH_segment_used_start__
+                             0x00000000                                ----  Gb  [ Linker created ]
+  __HEAPSIZE__               0x00000400  tp-0x06E4                     ----  Gb  [ Linker created ]
+  __RAM1_segment_end__       0x20010000                                ----  Gb  [ Linker created ]
+  __RAM1_segment_size__      0x00010000                                ----  Gb  [ Linker created ]
+  __RAM1_segment_start__     0x20000000  gp-0x0800                     ----  Gb  [ Linker created ]
+  __RAM1_segment_used_end__  0x20010000                                ----  Gb  [ Linker created ]
+  __RAM1_segment_used_size__
+                             0x00010000                                ----  Gb  [ Linker created ]
+  __RAM1_segment_used_start__
+                             0x20000000  gp-0x0800                     ----  Gb  [ Linker created ]
+  __RAM_segment_end__        0x20010000                                ----  Gb  [ Linker created ]
+  __RAM_segment_size__       0x00010000                                ----  Gb  [ Linker created ]
+  __RAM_segment_start__      0x20000000  gp-0x0800                     ----  Gb  [ Linker created ]
+  __RAM_segment_used_end__   0x20010000                                ----  Gb  [ Linker created ]
+  __RAM_segment_used_size__  0x00010000                                ----  Gb  [ Linker created ]
+  __RAM_segment_used_start__
+                             0x20000000  gp-0x0800                     ----  Gb  [ Linker created ]
+  __STACKSIZE__              0x00000400  tp-0x06E4                     ----  Gb  [ Linker created ]
+  __global_pointer$          0x20000800  gp+0x0000                     ----  Gb  [ Linker created ]
+  __stack_end__              0x20010000                                ----  Gb  [ Linker created ]
+  __thread_pointer$          0x00000AE4  tp+0x0000                     ----  Gb  [ Linker created ]
+  block_L1                   0x20000008  gp-0x07F8                     Init  Lc  assembly.o
+  block_L2                   0x2000000C  gp-0x07F4                     Init  Lc  assembly.o
+  key_L1                     0x20000010  gp-0x07F0                     Init  Lc  assembly.o
+  key_L2                     0x20000014  gp-0x07EC                     Init  Lc  assembly.o
+  my_assembly_function       0x00000050                  [240]      4  Code  Gb  assembly.o
+  result_L1                  0x20000000  gp-0x0800        [24]         Init  Gb  assembly.o
+  result_L2                  0x20000004  gp-0x07FC                     Init  Gb  assembly.o
+
+Untyped symbols by address:
+
+  Global base (gp) at 0x20000800
+  Thread base (tp) at 0x00000AE4
+  
+       Value     Access  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  ---------  -------------------------  ----------  -----  ----  --  -----------
+  0x00000000             __FLASH_segment_used_start__
+                                                                       ----  Gb  [ Linker created ]
+  0x00000000             __FLASH_segment_start__                       ----  Gb  [ Linker created ]
+  0x00000000             __FLASH1_segment_used_start__
+                                                                       ----  Gb  [ Linker created ]
+  0x00000000             __FLASH1_segment_start__                      ----  Gb  [ Linker created ]
+  0x00000050             my_assembly_function            [240]      4  Code  Gb  assembly.o
+  0x0000033C  tp-0x07A8  __FLASH_segment_used_size__
+                                                                       ----  Gb  [ Linker created ]
+  0x0000033C  tp-0x07A8  __FLASH_segment_used_end__
+                                                                       ----  Gb  [ Linker created ]
+  0x0000033C  tp-0x07A8  __FLASH1_segment_used_size__
+                                                                       ----  Gb  [ Linker created ]
+  0x0000033C  tp-0x07A8  __FLASH1_segment_used_end__
+                                                                       ----  Gb  [ Linker created ]
+  0x00000400  tp-0x06E4  __STACKSIZE__                                 ----  Gb  [ Linker created ]
+  0x00000400  tp-0x06E4  __HEAPSIZE__                                  ----  Gb  [ Linker created ]
+  0x00000AE4  tp+0x0000  __thread_pointer$                             ----  Gb  [ Linker created ]
+  0x00010000             __RAM_segment_used_size__                     ----  Gb  [ Linker created ]
+  0x00010000             __RAM_segment_size__                          ----  Gb  [ Linker created ]
+  0x00010000             __RAM1_segment_used_size__
+                                                                       ----  Gb  [ Linker created ]
+  0x00010000             __RAM1_segment_size__                         ----  Gb  [ Linker created ]
+  0x00100000             __FLASH_segment_size__                        ----  Gb  [ Linker created ]
+  0x00100000             __FLASH_segment_end__                         ----  Gb  [ Linker created ]
+  0x00100000             __FLASH1_segment_size__                       ----  Gb  [ Linker created ]
+  0x00100000             __FLASH1_segment_end__                        ----  Gb  [ Linker created ]
+  0x20000000  gp-0x0800  result_L1                        [24]         Init  Gb  assembly.o
+  0x20000000  gp-0x0800  __RAM_segment_used_start__
+                                                                       ----  Gb  [ Linker created ]
+  0x20000000  gp-0x0800  __RAM_segment_start__                         ----  Gb  [ Linker created ]
+  0x20000000  gp-0x0800  __RAM1_segment_used_start__
+                                                                       ----  Gb  [ Linker created ]
+  0x20000000  gp-0x0800  __RAM1_segment_start__                        ----  Gb  [ Linker created ]
+  0x20000004  gp-0x07FC  result_L2                                     Init  Gb  assembly.o
+  0x20000008  gp-0x07F8  block_L1                                      Init  Lc  assembly.o
+  0x2000000C  gp-0x07F4  block_L2                                      Init  Lc  assembly.o
+  0x20000010  gp-0x07F0  key_L1                                        Init  Lc  assembly.o
+  0x20000014  gp-0x07EC  key_L2                                        Init  Lc  assembly.o
+  0x20000800  gp+0x0000  __global_pointer$                             ----  Gb  [ Linker created ]
+  0x20010000             __stack_end__                                 ----  Gb  [ Linker created ]
+  0x20010000             __RAM_segment_used_end__                      ----  Gb  [ Linker created ]
+  0x20010000             __RAM_segment_end__                           ----  Gb  [ Linker created ]
+  0x20010000             __RAM1_segment_used_end__                     ----  Gb  [ Linker created ]
+  0x20010000             __RAM1_segment_end__                          ----  Gb  [ Linker created ]
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                      LINK SUMMARY                                       ***
+***                                                                                         ***
+***********************************************************************************************
+
+Memory breakdown:
+
+      732 bytes read-only  code    + 
+       96 bytes read-only  data    =     828 bytes read-only (total)
+    1 048 bytes read-write data
+
+Region summary:
+
+  Name        Range                     Size                 Used               Unused       Alignment Loss
+  ----------  -----------------  -----------  -------------------  -------------------  -------------------
+  FLASH       00000000-000fffff    1 048 576          828   0.08%    1 047 748  99.92%            0   0.00%
+  RAM         20000000-2000ffff       65 536        1 048   1.60%       64 488  98.40%            0   0.00%
+
+Link complete: 0 errors, 2 warnings, 0 remarks
